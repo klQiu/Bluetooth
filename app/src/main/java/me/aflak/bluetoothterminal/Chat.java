@@ -44,9 +44,9 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String getExtra1 = getIntent().getStringExtra("value1");
-        String getExtra2 = getIntent().getStringExtra("bt");
-        frequency = Integer.parseInt(getExtra1);
+//        String getExtra1 = getIntent().getStringExtra("value1");
+//        String getExtra2 = getIntent().getStringExtra("bt");
+//        frequency = Integer.parseInt(getExtra1);
 
         text = (TextView)findViewById(R.id.text);
         message = (EditText)findViewById(R.id.message);
@@ -57,7 +57,8 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
         text.setMovementMethod(new ScrollingMovementMethod());
         send.setEnabled(false);
 
-        if(b == null) {
+        if(StartPage.name == "Disconnected")  {
+  //      if(b == null) {
             b = new Bluetooth(this);
             b.enableBluetooth();
             //b.enable();
@@ -68,6 +69,7 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
             Display("Connecting...");
             b.connectToDevice(b.getPairedDevices().get(pos));
             StartPage.connected = true;
+            StartPage.name = name;   //here
         }
         else{
             send.setEnabled(true);
@@ -113,6 +115,7 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
                 b.removeCommunicationCallback();
                 b.disconnect();
                 StartPage.connected = false;
+                StartPage.name = "Disconnected";
                 Intent intent = new Intent(this, StartPage.class);
 //                intent.putExtra("value1", String.valueOf(frequency));
 //                Log.d("myTag", String.valueOf(frequency));
@@ -198,10 +201,10 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
         //b.removeCommunicationCallback();
         //b.disconnect();
         Intent intent = new Intent(this, StartPage.class);
-        intent.putExtra("value1", String.valueOf(frequency));
-        Log.d("myTag", String.valueOf(frequency));
-        intent.putExtra("bt", name);
-        Log.d("myTag", name);
+//        intent.putExtra("value1", String.valueOf(frequency));
+//        Log.d("myTag", String.valueOf(frequency));
+//        intent.putExtra("bt", name);
+//        Log.d("myTag", name);
         startActivity(intent);
     }
 

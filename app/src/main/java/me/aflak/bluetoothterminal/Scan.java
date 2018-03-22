@@ -34,12 +34,12 @@ public class Scan extends Activity implements Bluetooth.DiscoveryCallback, Adapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scan);
 
-        String getExtra1 = getIntent().getStringExtra("value1");
-        String getExtra2 = getIntent().getStringExtra("bt");
-        frequency = Integer.parseInt(getExtra1);
-        if(getExtra2 != null) {
-            name = getExtra2;
-        }
+//        String getExtra1 = getIntent().getStringExtra("value1");
+//        String getExtra2 = getIntent().getStringExtra("bt");
+//        frequency = Integer.parseInt(getExtra1);
+//        if(getExtra2 != null) {
+//            name = getExtra2;
+//        }
 
         listView = (ListView)findViewById(R.id.scan_list);
         state = (TextView) findViewById(R.id.scan_state);
@@ -149,10 +149,10 @@ public class Scan extends Activity implements Bluetooth.DiscoveryCallback, Adapt
 
     public void scan_return(View view){
         Intent intent = new Intent(this, StartPage.class);
-        intent.putExtra("value1", String.valueOf(frequency));
-        Log.d("myTag", String.valueOf(frequency));
-        intent.putExtra("bt", name);
-        Log.d("myTag", name);
+//        intent.putExtra("value1", String.valueOf(frequency));
+//        Log.d("myTag", String.valueOf(frequency));
+//        intent.putExtra("bt", name);
+//        Log.d("myTag", name);
         startActivity(intent);
     }
 

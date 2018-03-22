@@ -13,7 +13,7 @@ public class StartPage extends AppCompatActivity {
     public static String instrumrnt = null;
     public static boolean insUpdated = false;
     public static int frequency = 0;
-    String name = "Disconnected";
+    public static String name = "Disconnected";
     private static final String TAG = "StartPage";
     public static boolean connected = false;
 

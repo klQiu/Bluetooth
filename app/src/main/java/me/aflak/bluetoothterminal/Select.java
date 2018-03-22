@@ -69,10 +69,10 @@ public class Select extends Activity implements PullToRefresh.OnRefreshListener 
                     unregisterReceiver(mReceiver);
                     registered=false;
                 }
-                i.putExtra("value1", String.valueOf(freq));
-                Log.d("myTag", String.valueOf(freq));
-                i.putExtra("bt", name);
-                Log.d("myTag", name);
+//                i.putExtra("value1", String.valueOf(freq));
+//                Log.d("myTag", String.valueOf(freq));
+//                i.putExtra("bt", name);
+//                Log.d("myTag", name);
                 startActivity(i);
                 finish();
             }
@@ -82,10 +82,10 @@ public class Select extends Activity implements PullToRefresh.OnRefreshListener 
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Select.this, Scan.class);
-                i.putExtra("value1", String.valueOf(freq));
-                Log.d("myTag", String.valueOf(freq));
-                i.putExtra("bt", name);
-                Log.d("myTag", name);
+//                i.putExtra("value1", String.valueOf(freq));
+//                Log.d("myTag", String.valueOf(freq));
+//                i.putExtra("bt", name);
+//                Log.d("myTag", name);
                 startActivity(i);
             }
         });
@@ -142,10 +142,10 @@ public class Select extends Activity implements PullToRefresh.OnRefreshListener 
 
     public void select_return(View view){
         Intent intent = new Intent(this, StartPage.class);
-        intent.putExtra("value1", String.valueOf(freq));
-        Log.d("myTag", String.valueOf(freq));
-        intent.putExtra("bt", name);
-        Log.d("myTag", name);
+//        intent.putExtra("value1", String.valueOf(freq));
+//        Log.d("myTag", String.valueOf(freq));
+//        intent.putExtra("bt", name);
+//        Log.d("myTag", name);
         startActivity(intent);
     }
 
