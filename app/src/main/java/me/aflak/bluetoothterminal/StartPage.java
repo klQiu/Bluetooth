@@ -10,39 +10,42 @@ import android.widget.TextView;
 import me.aflak.bluetooth.Bluetooth;
 
 public class StartPage extends AppCompatActivity {
-    int frequency = 0;
+    public static String instrumrnt = null;
+    public static boolean insUpdated = false;
+    public static int frequency = 0;
     String name = "Disconnected";
     private static final String TAG = "StartPage";
     public static boolean connected = false;
-    // static Bluetooth b = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
-        String getExtra1 = getIntent().getStringExtra("value1");
-        String getExtra2 = getIntent().getStringExtra("bt");
-        if(getExtra1!= null) {
-            frequency = Integer.parseInt(getExtra1);
-            Log.v(TAG, getExtra1);
-            TextView t=(TextView)findViewById(R.id.freq);
-            t.setText(String.valueOf(frequency));
-        }
+        //String getExtra1 = getIntent().getStringExtra("value1");
+        //String getExtra2 = getIntent().getStringExtra("bt");
+        //if(getExtra1 != null) {
+         //   frequency = Integer.parseInt(getExtra1);
+         //   System.out.println(frequency);
+         //   Log.v(TAG, getExtra1);
+        TextView t=(TextView)findViewById(R.id.freq);
+        t.setText(String.valueOf(frequency));
+        //}
+
         Button btn3 = (Button) findViewById(R.id.button3);
         //Button btn4 = (Button) findViewById(R.id.cut);
         if(connected == false){
             btn3.setEnabled(false);
             //btn4.setEnabled(false);
-            TextView t = (TextView)findViewById(R.id.name);
-            t.setText("Disconnected");
+            TextView t2 = (TextView)findViewById(R.id.name);
+            t2.setText("Disconnected");
         }
         else{
             btn3.setEnabled(true);
             //btn4.setEnabled(true);
-            name = getExtra2;
-            Log.v(TAG, getExtra2);
-            TextView t = (TextView)findViewById(R.id.name);
-            t.setText(name);
+            //name = getExtra2;
+            //Log.v(TAG, getExtra2);
+            TextView t1 = (TextView)findViewById(R.id.name);
+            t1.setText(name);
 
         }
         /*
@@ -59,10 +62,10 @@ public class StartPage extends AppCompatActivity {
     }
     public void chooseNote(View view){
         Intent intent = new Intent(this, chooseNoteActivity.class);
-        intent.putExtra("value1", String.valueOf(frequency));
-        Log.d("myTag", String.valueOf(frequency));
-        intent.putExtra("bt", name);
-        Log.d("myTag", name);
+//        intent.putExtra("value1", String.valueOf(frequency));
+//        Log.d("myTag", String.valueOf(frequency));
+//        intent.putExtra("bt", name);
+//        Log.d("myTag", name);
         startActivity(intent);
     }
     public void connect(View view){
@@ -71,6 +74,14 @@ public class StartPage extends AppCompatActivity {
         Log.d("myTag", String.valueOf(frequency));
         intent.putExtra("bt", name);
         Log.d("myTag", name);
+        startActivity(intent);
+    }
+    public void choosePicture(View view){
+        Intent intent = new Intent(this, CameraActivity.class);
+//        intent.putExtra("value1", String.valueOf(frequency));
+//        Log.d("myTag", String.valueOf(frequency));
+//        intent.putExtra("bt", name);
+//        Log.d("myTag", name);
         startActivity(intent);
     }
     public void sendFrequency(View view){

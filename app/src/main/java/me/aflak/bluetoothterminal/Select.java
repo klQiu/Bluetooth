@@ -40,7 +40,7 @@ public class Select extends Activity implements PullToRefresh.OnRefreshListener 
         String getExtra1 = getIntent().getStringExtra("value1");
         String getExtra2 = getIntent().getStringExtra("bt");
         freq = Integer.parseInt(getExtra1);
-        if(getExtra2!= null) {
+        if(getExtra2 != null) {
             name = getExtra2;
         }
 

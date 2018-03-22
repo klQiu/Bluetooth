@@ -15,49 +15,46 @@ public class chooseNoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_note);
-        String getExtra1 = getIntent().getStringExtra("value1");
-        String getExtra2 = getIntent().getStringExtra("bt");
+        //String getExtra1 = getIntent().getStringExtra("value1");
+        //String getExtra2 = getIntent().getStringExtra("bt");
         Button btn1 = (Button) findViewById(R.id.btn1);
         Button btn2 = (Button) findViewById(R.id.btn2);
         Button btn3 = (Button) findViewById(R.id.btn3);
         Button btn4 = (Button) findViewById(R.id.btn4);
         Button btn5 = (Button) findViewById(R.id.btn5);
-        if(getExtra1!= null) {
-            freqChosen = Integer.parseInt(getExtra1);
-            if(freqChosen==100){
+        //if(getExtra1 != null) {
+        //    freqChosen = Integer.parseInt(getExtra1);
+        freqChosen = StartPage.frequency;
+            if (freqChosen == 100) {
                 prepareFrequency(100);
                 setAllBlank();
                 btn1.setBackgroundColor(Color.BLUE);
                 btn1.setTextColor(Color.WHITE);
-            }
-            else if(freqChosen==200){
+            } else if (freqChosen == 200) {
                 prepareFrequency(200);
                 setAllBlank();
                 btn2.setBackgroundColor(Color.BLUE);
                 btn2.setTextColor(Color.WHITE);
-            }
-            else if(freqChosen==300){
+            } else if (freqChosen == 300) {
                 prepareFrequency(300);
                 setAllBlank();
                 btn3.setBackgroundColor(Color.BLUE);
                 btn3.setTextColor(Color.WHITE);
-            }
-            else if(freqChosen==400){
+            } else if (freqChosen == 400) {
                 prepareFrequency(400);
                 setAllBlank();
                 btn4.setBackgroundColor(Color.BLUE);
                 btn4.setTextColor(Color.WHITE);
-            }
-            else if(freqChosen==0){
+            } else if (freqChosen == 0) {
                 prepareFrequency(0);
                 setAllBlank();
                 btn5.setBackgroundColor(Color.BLUE);
                 btn5.setTextColor(Color.WHITE);
             }
-        }
-        if(getExtra2!= null) {
-            name = getExtra2;
-        }
+        //}
+//        if(getExtra2!= null) {
+//            name = getExtra2;
+//        }
     }
     //GCEA
     public void setFreq1(View view){
@@ -124,7 +121,7 @@ public class chooseNoteActivity extends AppCompatActivity {
             note = "NC";
         }
         else if(freqChosen == 200){
-            note = "NE";
+            note = "Ne";
         }
         else if(freqChosen == 300){
             note = "NG";
@@ -137,10 +134,11 @@ public class chooseNoteActivity extends AppCompatActivity {
             Chat.b.send(msg);
         }
         Intent intent = new Intent(this, StartPage.class);
-        intent.putExtra("value1", String.valueOf(freqChosen));
-        Log.d("myTag", String.valueOf(freqChosen));
-        intent.putExtra("bt", name);
-        Log.d("myTag", name);
+        StartPage.frequency = freqChosen;
+        //intent.putExtra("value1", String.valueOf(freqChosen));
+        //Log.d("myTag", String.valueOf(freqChosen));
+        //intent.putExtra("bt", name);
+        //Log.d("myTag", name);
         startActivity(intent);
     }
 }

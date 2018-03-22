@@ -37,7 +37,7 @@ public class Scan extends Activity implements Bluetooth.DiscoveryCallback, Adapt
         String getExtra1 = getIntent().getStringExtra("value1");
         String getExtra2 = getIntent().getStringExtra("bt");
         frequency = Integer.parseInt(getExtra1);
-        if(getExtra2!= null) {
+        if(getExtra2 != null) {
             name = getExtra2;
         }
 

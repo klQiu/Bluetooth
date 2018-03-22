@@ -114,10 +114,10 @@ public class Chat extends AppCompatActivity implements Bluetooth.CommunicationCa
                 b.disconnect();
                 StartPage.connected = false;
                 Intent intent = new Intent(this, StartPage.class);
-                intent.putExtra("value1", String.valueOf(frequency));
-                Log.d("myTag", String.valueOf(frequency));
-                intent.putExtra("bt", name);
-                Log.d("myTag", name);
+//                intent.putExtra("value1", String.valueOf(frequency));
+//                Log.d("myTag", String.valueOf(frequency));
+//                intent.putExtra("bt", name);
+//                Log.d("myTag", name);
                 startActivity(intent);
                 finish();
                 return true;
