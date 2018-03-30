@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 26
     buildToolsVersion '26.0.2'
 
     defaultConfig {
         applicationId "elvis.bluetooth"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 12
         versionName "3.5"
     }
@@ -22,7 +22,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':mysql-connector-java-5.1.44-bin')
-    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'me.aflak.libraries:bluetooth:1.2.4'
     compile 'me.aflak.libraries:pulltorefresh:1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
