@@ -42,10 +42,12 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/scan_state"
+        android:layout_alignBottom="@+id/scan_state"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:onClick="scan_return"
+        android:layout_marginEnd="12dp"
         android:background="@drawable/button_color"
+        android:onClick="scan_return"
         android:text="Return" />
 
 </RelativeLayout>
