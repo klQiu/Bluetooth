@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="elvis.bluetooth.StartPage">
+    <Button
+        android:id="@+id/button"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/button4"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bluetooth"
+        android:onClick="connect"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:onClick="chooseNote"
+        android:text="Choose note"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="298dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/button4"
+        android:layout_marginTop="68dp"
+        android:layout_toEndOf="@+id/button2"
+        android:background="@drawable/start_tuning"
+        android:onClick="sendFrequency"
+        android:text="Start Tuning"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button2"
+        android:onClick="choosePicture"
+        android:text="Choose Picture" />
+
+    <TextView
+        android:id="@+id/text_freq"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/text_name"
+        android:text="Frequency:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/freq"
+        android:layout_height="31dp"
+        android:layout_width="74dp"
+        android:text="0"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteY="464dp"
+        tools:layout_editor_absoluteX="237dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/text_name"
+        android:layout_marginStart="10dp" />
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_alignBaseline="@+id/name"
+        android:layout_alignBottom="@+id/name"
+        android:layout_alignEnd="@+id/button4"
+        android:text="Name:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_height="31dp"
+        android:layout_width="74dp"
+        android:text="Disconnected"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteY="464dp"
+        tools:layout_editor_absoluteX="237dp"
+        android:layout_above="@+id/freq"
+        android:layout_alignStart="@+id/freq"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/text_ins"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_above="@+id/text_name"
+        android:layout_alignStart="@+id/text_name"
+        android:text="Instrument:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/ins"
+        android:layout_height="31dp"
+        android:layout_width="74dp"
+        android:text="0"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteY="464dp"
+        tools:layout_editor_absoluteX="237dp"
+        android:layout_above="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
