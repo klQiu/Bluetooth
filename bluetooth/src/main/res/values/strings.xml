@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Bluetooth Terminal</string>
+    <string name="app_name">Music Tuner</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <color name="black">#000000</color>
     <color name="bg">#C0C0C0</color>
     <color name="red">#ffff0000</color>
     <color name="wl_blue">#2878ff</color>

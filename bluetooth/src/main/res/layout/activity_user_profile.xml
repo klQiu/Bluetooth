@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="elvis.bluetooth.UserProfile">
+
+    <TextView
+        android:id="@+id/text_email"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Email:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="300dp"
+        android:layout_height="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/text_email"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/text_userId"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_email"
+        android:text="User ID:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/userId"
+        android:layout_width="140dp"
+        android:layout_height="31dp"
+        android:layout_alignBaseline="@+id/text_userId"
+        android:layout_alignBottom="@+id/text_userId"
+        android:layout_toEndOf="@+id/text_userId"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/text_freq"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_alignBaseline="@+id/freq"
+        android:layout_alignBottom="@+id/freq"
+        android:layout_alignParentStart="true"
+        android:text="Frequency:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/freq"
+        android:layout_width="74dp"
+        android:layout_height="31dp"
+        android:layout_below="@+id/name"
+        android:layout_toEndOf="@+id/text_name"
+        android:text="0"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_alignBaseline="@+id/name"
+        android:layout_alignBottom="@+id/name"
+        android:layout_alignParentStart="true"
+        android:text="Name:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="140dp"
+        android:layout_height="31dp"
+        android:layout_below="@+id/text_ins"
+        android:layout_toEndOf="@+id/text_ins"
+        android:text="Disconnected"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/text_ins"
+        android:layout_width="120dp"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_userId"
+        android:text="Instrument:"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <TextView
+        android:id="@+id/ins"
+        android:layout_width="140dp"
+        android:layout_height="31dp"
+        android:layout_alignBaseline="@+id/text_ins"
+        android:layout_alignBottom="@+id/text_ins"
+        android:layout_toEndOf="@+id/text_ins"
+        android:text="Unknown"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_color"
+        android:onClick="profileReturn"
+        android:text="Return" />
+
+</RelativeLayout>
