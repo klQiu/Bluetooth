@@ -25,6 +25,15 @@ public class ListTuneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String instrument = StartPage.instrumrnt;
+                //delete it!!!!!
+                instrument = "guitar";
+                recordList = BackEnd.getHisRecord(Current.getCurUserEmail(), instrument);
+            }
+        }).start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_tune);
         User user = new User("qq@qq.com","123",6);
@@ -42,15 +51,10 @@ public class ListTuneActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                String instrument = StartPage.instrumrnt;
-                //delete it!!!!!
-                instrument = "guitar";
-                recordList = BackEnd.getHisRecord(Current.getCurUserEmail(), instrument);
-            }
-        }).start();
+
+        //add a splash page here
+
+
         while (recordList.isEmpty()) {}
 //        recordList.add(new TuneRecord("notes: ab c d e", "name: adsfasdf"));
 //        recordList.add(new TuneRecord("notes: ab asdfasd d e", "name: adsfasdf"));
@@ -65,7 +69,6 @@ public class ListTuneActivity extends AppCompatActivity {
         // specify an adapter (see also next example)
         mAdapter = new ListTuneAdapter(recordList);
         recyclerView.setAdapter(mAdapter);
-
     }
 
     public class ListTuneAdapter extends RecyclerView.Adapter<ListTuneAdapter.ListTuneViewHolder> {
@@ -134,12 +137,28 @@ public class ListTuneActivity extends AppCompatActivity {
             View v = inflater.inflate(R.layout.fragment_tune_item_config, container, false);
             Button edit = v.findViewById(R.id.tune_item_edit);
             Button delete = v.findViewById(R.id.tune_item_delete);
-
+            Button apply = v.findViewById(R.id.tune_item_apply);
             final int pos = getArguments().getInt("pos");
             edit.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     // Code here executes on main thread after user presses button
-
+                    if ((StartPage.instrumrnt).equals("ukulele")) {
+                        Intent intent = new Intent((ListTuneActivity) getActivity(), chooseNoteActivity.class);
+                        startActivity(intent);
+                    } else if ((StartPage.instrumrnt).equals("guitar")) {
+                        Intent intent = new Intent((ListTuneActivity) getActivity(), chooseGuitarActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText((ListTuneActivity) getActivity(), "Please choose a valid instrument!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+            apply.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    // Code here executes on main thread after user presses button
+                    StartPage.tuning = ((ListTuneActivity) getActivity()).recordList.get(pos).notes;
+                    Intent intent = new Intent((ListTuneActivity) getActivity(), StartPage.class);
+                    startActivity(intent);
                 }
             });
             delete.setOnClickListener(new View.OnClickListener() {
