@@ -8,10 +8,11 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentEnd="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button3"
+        android:layout_marginStart="63dp"
         android:background="@drawable/bluetooth"
         android:onClick="connect"
         tools:layout_editor_absoluteX="106dp"
@@ -19,22 +20,24 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/text_freq"
+        android:layout_alignBottom="@+id/text_freq"
+        android:layout_alignStart="@+id/ins"
         android:onClick="chooseNote"
-        android:text="Choose note"
+        android:background="@drawable/rectangle_full"
+        android:text="---"
         tools:layout_editor_absoluteX="133dp"
         tools:layout_editor_absoluteY="298dp" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/button4"
-        android:layout_marginTop="68dp"
-        android:layout_toEndOf="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/button5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
         android:background="@drawable/start_tuning"
         android:onClick="sendFrequency"
         android:text="Start Tuning"
@@ -43,90 +46,65 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/ins"
+        android:layout_below="@+id/button3"
+        android:background="@drawable/camera"
         android:onClick="choosePicture"
-        android:text="Choose Picture" />
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="298dp" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="27dp"
+        android:layout_toEndOf="@+id/button3"
         android:background="@drawable/user"
         android:onClick="userProfile" />
 
     <TextView
         android:id="@+id/text_freq"
         android:layout_width="120dp"
-        android:layout_height="31dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/text_name"
-        android:text="Frequency:"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/text_ins"
+        android:layout_below="@+id/text_ins"
+        android:layout_marginTop="15dp"
+        android:text="Tuning:"
         android:textSize="20sp"
+        android:textColor="@color/wl_blue"
         tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="464dp" />
 
-    <TextView
-        android:id="@+id/freq"
-        android:layout_height="31dp"
-        android:layout_width="74dp"
-        android:text="0"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteY="464dp"
-        tools:layout_editor_absoluteX="237dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/text_name"
-        android:layout_marginStart="10dp" />
-
-    <TextView
-        android:id="@+id/text_name"
-        android:layout_width="120dp"
-        android:layout_height="31dp"
-        android:layout_alignBaseline="@+id/name"
-        android:layout_alignBottom="@+id/name"
-        android:layout_alignEnd="@+id/button4"
-        android:text="Name:"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="464dp" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_height="31dp"
-        android:layout_width="74dp"
-        android:text="Disconnected"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteY="464dp"
-        tools:layout_editor_absoluteX="237dp"
-        android:layout_above="@+id/freq"
-        android:layout_alignStart="@+id/freq"
-        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/text_ins"
         android:layout_width="120dp"
-        android:layout_height="31dp"
-        android:layout_above="@+id/text_name"
-        android:layout_alignStart="@+id/text_name"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/ins"
+        android:layout_alignBottom="@+id/ins"
+        android:layout_alignStart="@+id/button"
         android:text="Instrument:"
+        android:textColor="@color/wl_blue"
         android:textSize="20sp"
         tools:layout_editor_absoluteX="117dp"
         tools:layout_editor_absoluteY="464dp" />
 
-    <TextView
+    <Button
         android:id="@+id/ins"
-        android:layout_height="31dp"
-        android:layout_width="74dp"
-        android:text="Unknown"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/button5"
+        android:layout_below="@+id/button4"
+        android:layout_marginEnd="38dp"
+        android:layout_marginTop="29dp"
+        android:text="---"
+        android:background="@drawable/rectangle_full"
         android:textSize="20sp"
-        tools:layout_editor_absoluteY="464dp"
         tools:layout_editor_absoluteX="237dp"
-        android:layout_above="@+id/name"
-        android:layout_alignStart="@+id/name"
-        android:layout_alignParentEnd="true" />
+        tools:layout_editor_absoluteY="464dp" />
 
 </RelativeLayout>

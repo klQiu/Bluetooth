@@ -4,15 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="elvis.bluetooth.chooseNoteActivity">
+    tools:context="elvis.bluetooth.chooseGuitarActivity">
 
     <EditText
         android:id="@+id/note_c"
         android:layout_width="80dp"
         android:layout_height="32dp"
-        android:layout_alignStart="@+id/note_g"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_marginTop="37dp"
+        android:layout_above="@+id/note_a"
+        android:layout_marginBottom="11dp"
+        android:layout_toStartOf="@+id/imageView"
+        android:background="@drawable/rectangle_full"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+    <EditText
+        android:id="@+id/note_b"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_alignBaseline="@+id/note_a"
+        android:layout_alignBottom="@+id/note_a"
+        android:layout_toEndOf="@+id/imageView"
+        android:background="@drawable/rectangle_full"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+    <EditText
+        android:id="@+id/note_d"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/imageView"
         android:background="@drawable/rectangle_full"
         android:gravity="center_horizontal"
         tools:layout_editor_absoluteX="16dp"
@@ -20,34 +43,35 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="140dp"
-        android:layout_height="300dp"
+        android:layout_width="180dp"
+        android:layout_height="360dp"
+        android:layout_below="@+id/save"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/ukuleleheadstrings" />
+        android:layout_marginTop="27dp"
+        android:background="@drawable/guitarheadstrings" />
 
     <EditText
         android:id="@+id/note_e"
         android:layout_width="80dp"
         android:layout_height="32dp"
-        android:layout_alignBaseline="@+id/note_c"
-        android:layout_alignBottom="@+id/note_c"
-        android:layout_alignStart="@+id/note_a"
+        android:layout_alignBaseline="@+id/note_d"
+        android:layout_alignBottom="@+id/note_d"
+        android:layout_toStartOf="@+id/imageView"
         android:background="@drawable/rectangle_full"
         android:gravity="center_horizontal"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="97dp" />
 
     <Button
-    android:id="@+id/done"
-    android:layout_width="50sp"
-    android:layout_height="50sp"
-    android:background="@drawable/tick"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentEnd="true"
-    android:onClick="done"
-    tools:layout_editor_absoluteX="290dp"
-    tools:layout_editor_absoluteY="398dp" />
+        android:id="@+id/done"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:background="@drawable/tick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="done"
+        tools:layout_editor_absoluteX="290dp"
+        tools:layout_editor_absoluteY="398dp" />
 
     <Button
         android:id="@+id/save"
@@ -73,10 +97,9 @@
         android:id="@+id/note_g"
         android:layout_width="80dp"
         android:layout_height="32dp"
-        android:layout_below="@+id/note_c"
-        android:layout_marginEnd="12dp"
-        android:layout_marginTop="29dp"
-        android:layout_toStartOf="@+id/imageView"
+        android:layout_alignBaseline="@+id/note_c"
+        android:layout_alignBottom="@+id/note_c"
+        android:layout_toEndOf="@+id/imageView"
         android:background="@drawable/rectangle_full"
         android:gravity="center_horizontal" />
 
@@ -84,10 +107,9 @@
         android:id="@+id/note_a"
         android:layout_width="80dp"
         android:layout_height="32dp"
-        android:layout_alignBaseline="@+id/note_g"
-        android:layout_alignBottom="@+id/note_g"
-        android:layout_marginStart="12dp"
-        android:layout_toEndOf="@+id/imageView"
+        android:layout_above="@+id/note_e"
+        android:layout_marginBottom="12dp"
+        android:layout_toStartOf="@+id/imageView"
         android:background="@drawable/rectangle_full"
         android:gravity="center_horizontal" />
 
@@ -101,6 +123,5 @@
         android:layout_marginTop="13dp"
         android:gravity="center_horizontal"
         android:hint="Name" />
-
 
 </RelativeLayout>

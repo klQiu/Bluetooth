@@ -21,7 +21,7 @@ public class UserProfile extends AppCompatActivity {
         t2.setText(String.valueOf(Current.getCurUserID()));
         t3.setText(String.valueOf(StartPage.instrumrnt));
         t4.setText(String.valueOf(StartPage.name));
-        t5.setText(String .valueOf(StartPage.frequency));
+        t5.setText(String .valueOf(StartPage.tuning));
     }
 
     public void profileReturn(View view){

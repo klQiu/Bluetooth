@@ -94,7 +94,8 @@ public class CameraActivity extends AppCompatActivity {
                 }
             }).start();
         while(!StartPage.insUpdated){}
-        if(StartPage.instrumrnt == null){
+        System.out.println(StartPage.instrumrnt);
+        if((StartPage.instrumrnt).equals(null) ){  //StartPage.instrumrnt == null
             Toast.makeText(this, "Loading", Toast.LENGTH_SHORT).show();
         }
         else {

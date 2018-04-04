@@ -10,42 +10,41 @@ import android.widget.TextView;
 import me.aflak.bluetooth.Bluetooth;
 
 public class StartPage extends AppCompatActivity {
-    public static String instrumrnt = "Unknown";
+    public static String instrumrnt = "---";
     public static boolean insUpdated = false;
     public static int frequency = 0;
     public static String name = "Disconnected";
     private static final String TAG = "StartPage";
     public static boolean connected = false;
+    public static String tuning = "---";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
 
-        TextView t=(TextView)findViewById(R.id.freq);
-        t.setText(String.valueOf(frequency));
-        TextView t3 = (TextView)findViewById(R.id.ins);
-        t3.setText(String.valueOf(instrumrnt));
-
+        TextView t = (TextView)findViewById(R.id.ins);
+        t.setText(String.valueOf(instrumrnt));
+        TextView tu = (TextView)findViewById(R.id.button2);
+        tu.setText(String.valueOf(tuning));
 
         Button btn3 = (Button) findViewById(R.id.button3);
         Button btn2 = (Button) findViewById(R.id.button2);
+        Button btn4 = (Button) findViewById(R.id.ins);
+        btn4.setEnabled(false);
         if(connected == false){
             btn3.setEnabled(false);
             btn2.setEnabled(false);
-            TextView t2 = (TextView)findViewById(R.id.name);
-            t2.setText("Disconnected");
         }
         else{
             btn3.setEnabled(true);
             btn2.setEnabled(true);
-            TextView t1 = (TextView)findViewById(R.id.name);
-            t1.setText(name);
-
         }
+        //for test, should be deleted!!!!1
+        btn2.setEnabled(true);
     }
     public void chooseNote(View view){
-        Intent intent = new Intent(this, chooseNoteActivity.class);
+        Intent intent = new Intent(this, ListTuneActivity.class);
         startActivity(intent);
     }
     public void connect(View view){
@@ -66,18 +65,6 @@ public class StartPage extends AppCompatActivity {
     }
     public void sendFrequency(View view){
         String note = "T";
-//        if(frequency == 100){
-//            note = "C";
-//        }
-//        else if(frequency == 200){
-//            note = "E";
-//        }
-//        else if(frequency == 300){
-//            note = "G";
-//        }
-//        else if(frequency == 400){
-//            note = "A";
-//        }
         String msg = "S" + note + "E";
         Chat.b.send(msg);
     }
